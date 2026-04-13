@@ -1,11 +1,8 @@
-// @ts-check
+/**@import { Config } from 'typescript-eslint' */
 
-const stylisticReq = require('@stylistic/eslint-plugin');
-/**@type {typeof stylisticReq['default']} */
-// @ts-ignore
-const stylistic = stylisticReq;
+import stylistic from '@stylistic/eslint-plugin';
 
-/** @satisfies {import('typescript-eslint').Config} */
+/** @satisfies {Config} */
 const config = [{
 	plugins: { stylistic },
 	rules: {
@@ -131,4 +128,4 @@ const config = [{
  * @license MIT
  * @version 0.2.2
  */
-module.exports = config;
+export default config;

@@ -46,6 +46,7 @@ const config = defineConfig(
 		name: 'Node Env',
 		files: [
 			'config/cz-config.cjs',
+			'packages/esling-config/test.eslint.js',
 		],
 		languageOptions: { globals: globals.node },
 	},

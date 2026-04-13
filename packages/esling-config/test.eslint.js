@@ -1,20 +1,26 @@
-// @ts-check
+import accurtypeStyle from 'eslint-config-accurtype-style';
+import { defineConfig } from 'eslint/config';
+import { dirname } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { configs } from 'typescript-eslint';
 
-const tseslint = require('typescript-eslint');
-const accurtypeStyle = require('.');
-
-const config = tseslint.config(
+/**
+ * ESLint config for testing
+ * @author e0selmy4v
+ * @license MIT
+ */
+const config = defineConfig(
 	...accurtypeStyle,
-	...tseslint.configs.stylisticTypeChecked,
+	...configs.stylisticTypeChecked,
 	{
 		name: 'TS Config',
 		languageOptions: {
 			parserOptions: {
-				tsconfigRootDir: __dirname,
+				tsconfigRootDir: dirname(fileURLToPath(import.meta.url)),
 				projectService: true,
 			},
 		},
 	},
 );
 
-module.exports = config;
+export default config;
